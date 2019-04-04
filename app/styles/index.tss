@@ -5,9 +5,29 @@
 	width: Ti.UI.FILL
 }
 
+"#layoutContainer": {
+	backgroundColor:"white",
+	layout: "vertical",
+	height: Ti.UI.FILL,
+	width: Ti.UI.FILL	
+}
+
+"#VideoSettings": {
+	backgroundColor:"white",	
+	layout: "vertical",
+	height: Ti.UI.SIZE,
+	width: Ti.UI.SIZE	
+}
+
+".VideoSettings" : {
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	top: "10px",
+	bottom: "15px"
+}
+
 "#VideoContainer" : {
 	backgroundColor: "yellow",
-	height: '80%',
+	height: '70%',
 	width: Ti.UI.FILL,
 	layout: "vertical"
 }
@@ -31,5 +51,5 @@
 	font: {
 		fontSize: 21
 	},
-	bottom: "30dpx"
+	bottom: "20px"
 }

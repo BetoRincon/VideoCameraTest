@@ -1,9 +1,15 @@
 <Alloy>
 	<Window class="container">
-		<View id="layoutContainer">		
-		<View id="VideoContainer">
-			
-		</View>	
+		<View id="layoutContainer">	
+			<View id="VideoSettings">
+				<Label id="QUALITY_HIGH" class="VideoSettings">QUALITY_HIGH</Label>
+				<Label id="QUALITY_LOW" class="VideoSettings">QUALITY_LOW</Label>
+				<Label id="QUALITY_640x480" class="VideoSettings">QUALITY_640x480</Label>
+				<Label id="QUALITY_IFRAME_1280x720" class="VideoSettings">QUALITY_IFRAME_1280x720</Label>
+			</View>
+			<View id="VideoContainer">
+				
+			</View>	
 
 		<Label  id="record"></Label>
 		</View>

@@ -1,5 +1,5 @@
 
-
+let videoQuality = 1;
 
 
 function showCamera(type, callback) {
@@ -24,7 +24,7 @@ function showCamera(type, callback) {
 				callback(e, null);
 			},
 			mediaTypes: [type],
-			videoQuality: 4,
+			videoQuality: videoQuality,
 			// overlay: $.VideoContainer, //Se agrega en versiones de Android Actuales
 			whichCamera: Ti.Media.CAMERA_REAR,
 			saveToPhotoGallery: true,
@@ -139,6 +139,53 @@ $.record.addEventListener('click', function () {
 
 		}
 	});
+});
+
+function setVideoQuality(_videoQuality) {
+
+	console.log("[index | setVideoQuality] videoQuality: ", videoQuality);
+	switch (_videoQuality) {
+		case "QUALITY_HIGH":
+			videoQuality = Titanium.Media.QUALITY_HIGH;
+			break;
+		case "QUALITY_LOW":
+			videoQuality = Titanium.Media.QUALITY_LOW;
+			break;
+		case "QUALITY_640x480":
+			videoQuality = Titanium.Media.QUALITY_640x480;
+			break;
+		case "QUALITY_IFRAME_1280x720":
+			videoQuality = Titanium.Media.QUALITY_IFRAME_1280x720;
+			break;
+		default:
+			videoQuality = 0;
+			break;
+	}
+	console.log("[index | setVideoQuality] videoQuality: ", videoQuality);
+	Ti.UI.createNotification({
+		message: "Ready to record | Video Quality: " + _videoQuality,
+		duration: Ti.UI.NOTIFICATION_DURATION_SHORT
+	}).show();
+}
+
+$.QUALITY_HIGH.addEventListener("click", (e) => {
+	console.log("click e: ", JSON.stringify(e));
+	setVideoQuality(e.source.id);
+})
+
+$.QUALITY_LOW.addEventListener("click", (e) => {
+	console.log("click e: ", JSON.stringify(e));
+	setVideoQuality(e.source.id);
+})
+
+$.QUALITY_640x480.addEventListener("click", (e) => {
+	console.log("click e: ", JSON.stringify(e));
+	setVideoQuality(e.source.id);
+})
+
+$.QUALITY_IFRAME_1280x720.addEventListener("click", (e) => {
+	console.log("click e: ", JSON.stringify(e));
+	setVideoQuality(e.source.id);
 });
 
 
