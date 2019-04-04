@@ -1,8 +1,11 @@
 <Alloy>
 	<Window class="container">
-		<Label id="label" onClick="doClick"></Label>
+		<View id="layoutContainer">		
 		<View id="VideoContainer">
 			
 		</View>	
+
+		<Label  id="record"></Label>
+		</View>
 	</Window>
 </Alloy>
